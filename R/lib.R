@@ -30,8 +30,9 @@ holidays = c(
 
 net_work_days <- function(startdate,enddate,holidays) {
   result = 0
+
   for (i in 0:(enddate - startdate)) {
-    temp = startdate + i
+    temp = startdate + days(i)
     if (!(weekdays(temp) %in% c("Saturday", "Sunday")) & !(temp %in% holidays)) {
       result = result + 1
     }
